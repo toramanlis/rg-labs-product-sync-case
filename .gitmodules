@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/toramanlis/rg-labs-product-sync-case.backend
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/toramanlis/rg-labs-product-sync-case.frontend
