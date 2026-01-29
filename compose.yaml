@@ -13,8 +13,10 @@ x-backend-env: &backend-env
     DB_PASSWORD: '${DB_PASSWORD:-secret}'
 
 x-backend-depends: &backend-depends
-    - pgsql
-    - redis
+    pgsql:
+        condition: service_healthy
+    redis:
+        condition: service_healthy
 
 x-app-base: &app-base
     restart: unless-stopped
