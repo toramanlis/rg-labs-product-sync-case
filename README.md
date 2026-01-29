@@ -74,7 +74,7 @@ Hash algoritması olarak SHA256 seçmemin sebebi hız ve collision rate oranlar�
 
 Hash hesaplamasına `name`, `price`, `stock` ve `description` alanlarını dahil ettim. PHPnin `json_encode` fonksiyonunu default flaglerle çalıştırdıktan sonra hash algoritmasına geçtim.
 
-# Dikat Ettiğim Noktalar
+#### Dikat Ettiğim Noktalar
  - `price` alanının her zaman float olarak kullanılması: Provider bir sebele format değiştirip `99.99` olan fiyatı "99.9900" olarak göndermeye başlarsa bunu fiyat değişimi olarak algılamamak için
  - json_encode esnasında unicode karakterlerin encode edilmesi: Farklı charset/collation sebebiyle aynı karakterin farklı bit değerlerine dönüşmemesi için.
 
