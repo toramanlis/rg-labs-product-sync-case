@@ -103,9 +103,6 @@ services:
                 - ping
             retries: 3
             timeout: 5s
-    graylog:
-        image: 'graylog/graylog'
-        
 networks:
     sail:
         driver: bridge

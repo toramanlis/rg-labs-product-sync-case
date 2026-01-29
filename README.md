@@ -23,6 +23,7 @@ Kuruluma başlarken oluşturulması gereken 3 adet `.env` dosyası var. Biri pro
 cp .env.example .env
 cp backend/.env.example backend/.env
 cp frontend/.env.example frontend/.env
+cd backend && composer install
 docker compose up
 ```
 
