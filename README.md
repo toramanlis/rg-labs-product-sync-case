@@ -14,16 +14,32 @@ VueJs
 ## Kurulum
 
 Kurulum için gerekenler:
+    - git
     - Docker
     - Docker Compose
+
+Öncelikle repoyu clonelamak için:
+
+```
+git clone git@github.com:toramanlis/rg-labs-product-sync-case.git --recurse-submodules
+```
 
 Kuruluma başlarken oluşturulması gereken 3 adet `.env` dosyası var. Biri proje root dizininde docker tarafından kullanıclacak değerler için. Diğer ikisi de `backend` ve `frontend` dizinlerinin içinde ilgili değerlere ait. Her üçü için de birer `.env.example` mevcut. Local ortam için doğrudan kopyalanarak kullanılabilir.
 
 ```
+cd rg-labs-product-sync-case
 cp .env.example .env
 cp backend/.env.example backend/.env
 cp frontend/.env.example frontend/.env
-cd backend && composer install
+```
+
+Bu noktadan sonra paket kurulumları, migration ve seed işlemleri yapıldıktan sonra proje ayağa kaldırılabilir.
+
+```
+docker compose run app composer install
+docker compose run app php artisan migrate
+docker compose run app php artisan db:seed
+docker compose run fe npm install
 docker compose up
 ```
 
