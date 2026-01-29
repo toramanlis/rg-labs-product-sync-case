@@ -36,9 +36,9 @@ cp frontend/.env.example frontend/.env
 Bu noktadan sonra paket kurulumları, migration ve seed işlemleri yapıldıktan sonra proje ayağa kaldırılabilir.
 
 ```
-docker compose run app composer install
-docker compose run app php artisan migrate
-docker compose run app php artisan db:seed
+docker compose run app sail composer install
+docker compose run app sail php artisan migrate
+docker compose run app sail php artisan db:seed
 docker compose run fe npm install
 docker compose up
 ```
