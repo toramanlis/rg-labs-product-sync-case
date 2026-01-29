@@ -1,0 +1,35 @@
+// https://aka.ms/devcontainer.json
+{
+	"name": "RG Labs Product Sync Case",
+	"dockerComposeFile": [
+		"../compose.yaml"
+	],
+	"service": "app",
+	"mounts": [
+		"source=profile,target=/home/sail,type=volume",
+		"source=./,target=/var/www/html,type=bind"
+	],
+	"workspaceFolder": "/var/www/html",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"laravel.vscode-laravel",
+				"mikestead.dotenv",
+				"ryannaddy.laravel-artisan",
+				"xdebug.php-debug",
+				"bmewburn.vscode-intelephense-client",
+				"eamodio.gitlens",
+				"valeryanm.vscode-phpsab",
+				"open-southeners.laravel-pint",
+				"cweijan.vscode-mysql-client2",
+				"Vue.volar"
+			],
+			"settings": {}
+		}
+	},
+	"remoteUser": "sail",
+	"postCreateCommand": "chown -R 1000:1000 /var/www/html 2>/dev/null || true"
+	// "forwardPorts": [],
+	// "runServices": [],
+	// "shutdownAction": "none",
+}
