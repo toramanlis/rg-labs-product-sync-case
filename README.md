@@ -36,11 +36,10 @@ cp frontend/.env.example frontend/.env
 Bu noktadan sonra paket kurulumları, migration ve seed işlemleri yapıldıktan sonra proje ayağa kaldırılabilir.
 
 ```
-docker compose run app root chown -R sail:sail .
-docker compose run app sail composer install
-docker compose run app sail php artisan migrate
-docker compose run app sail php artisan db:seed
-docker compose run fe npm install
+docker compose run --rm --no-deps app root chown -R sail:sail .
+docker compose run --rm --no-deps app sail composer install
+docker compose run --rm app sail php artisan migrate --seed
+docker compose run --rm --no-deps fe npm install
 docker compose up
 ```
 
